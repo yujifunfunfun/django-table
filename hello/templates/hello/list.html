@@ -1,0 +1,20 @@
+{% extends "hello/base.html" %}
+
+{% block content %}
+<table border="1">
+    <tr>
+        <th>名前</th>
+        <th>性別</th>
+        <th>特徴</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ i.name }}</td>
+        <td>{{ i.gender }}</td>
+        <td>{{ i.features }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}

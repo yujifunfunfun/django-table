@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Document</title>
+</head>
+<body>
+	<div id="wrapper">
+		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark">
+			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'add' %}">
+				<div class="sidebar-brand-text mx-3">鬼滅の刃</div>
+			</a>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'add' %}">
+					<span>キャラクター登録</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'list' %}">
+					<span>キャラクター一覧</span>
+				</a>
+			</li>
+		</ul>
+
+		<div id="content-wrapper" class="d-flex flex-column">
+			<div id="content">
+				<div class="container-fluid ">
+					{% block content %}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
