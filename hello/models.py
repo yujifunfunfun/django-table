@@ -9,6 +9,6 @@ class Kimetsu(models.Model):
     ('女','女'),
   }
 
-  name = models.CharField(max_length=10)
-  gender = models.CharField(max_length=2,choices=CHOICE)
-  features = models.CharField(max_length=20)
+  name = models.CharField(max_length=10,verbose_name='name')
+  gender = models.CharField(max_length=2,choices=CHOICE,verbose_name='gender')
+  features = models.CharField(max_length=200,verbose_name='features')

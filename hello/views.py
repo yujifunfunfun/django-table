@@ -3,6 +3,8 @@ from django.views.generic import View
 from django.shortcuts import render, redirect
 from .forms import KimetsuForm
 from .models import Kimetsu
+from .tables import KimetsuTable
+from django_tables2 import SingleTableView
 
 class AddView(FormView):
   template_name = 'hello/add.html'
@@ -18,4 +20,11 @@ class ListView(View):
     data = Kimetsu.objects.all()
     params = {'data': data}
     return render(request, 'hello/list.html', params)
+
+class DetailView(SingleTableView):
+    table_class = KimetsuTable
+    template_name = 'hello/detail.html' 
+
+    def get_queryset(self):
+        return Kimetsu.objects.all()
 
